@@ -23,7 +23,7 @@ jobs:
       - run: pip install -r requirements-dev.txt
       - run: ruff check . && ruff format --check .
         working-directory: .
-      - run: pytest -q
+      - run: python -m pytest -q  # -m кладёт backend в sys.path, иначе не найдётся пакет app
       - name: Метрики качества агента на эталонном наборе
         run: python -m app.eval --min-completed 0.9
         env:
