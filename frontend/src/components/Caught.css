@@ -1,0 +1,48 @@
+/* «Что я поймал за вас» — отдельный файл, чтобы параллельные PR не конфликтовали в styles.css */
+.caught ul {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.caught li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.caught li > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.caught li span:not(.caught-icon) {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.caught-icon {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--ok-soft);
+    color: var(--ok);
+}
+
+.caught-fixed .caught-icon {
+    background: var(--fix-soft);
+    color: var(--fix);
+}
+
+.caught-trap .caught-icon {
+    background: var(--warn-soft);
+    color: var(--warn);
+}

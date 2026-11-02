@@ -1,0 +1,197 @@
+/* Живой менеджер в чате и консоль оператора — отдельный файл, чтобы параллельные PR не конфликтовали в styles.css */
+.msg.operator .bubble {
+    background: var(--accent-soft);
+    border-bottom-left-radius: 6px;
+    box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.msg-author {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.msg.agent.handoff .bubble {
+    box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.handoff-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 8px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: var(--accent-soft);
+    color: var(--ink);
+    font-size: 14px;
+}
+
+.handoff-banner > span {
+    flex: 1;
+    min-width: 0;
+}
+
+.handoff-banner .dot {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: handoff-pulse 1.4s ease-in-out infinite;
+}
+
+.handoff-banner.active .dot {
+    animation: none;
+    background: var(--ok);
+}
+
+@keyframes handoff-pulse {
+    50% {
+        opacity: 0.35;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .handoff-banner .dot {
+        animation: none;
+    }
+}
+
+/* ── Консоль оператора ── */
+.operator-page .operator-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 340px) 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.operator-queue {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.operator-queue button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+}
+
+.operator-queue button.on {
+    border-color: var(--cta);
+    box-shadow: 0 0 0 1px var(--cta);
+}
+
+.operator-queue small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.operator-queue .waiting b::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    vertical-align: middle;
+}
+
+.operator-unread {
+    display: inline-block;
+    min-width: 20px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+
+.operator-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+.operator-trace {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 320px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+.operator-trace li span {
+    color: var(--muted);
+}
+
+.operator-chat {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.operator-reply {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.operator-reply textarea {
+    flex: 1;
+    min-height: 64px;
+    resize: vertical;
+    padding: 10px 12px;
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    background: var(--card);
+    color: var(--ink);
+    font: inherit;
+}
+
+.operator-login {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.operator-login label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-weight: 600;
+}
+
+@media (max-width: 860px) {
+    .operator-page .operator-grid {
+        grid-template-columns: 1fr;
+    }
+}

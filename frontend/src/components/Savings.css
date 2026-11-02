@@ -1,0 +1,54 @@
+/* «Сколько времени вы сэкономили» — отдельный файл, чтобы параллельные PR не конфликтовали в styles.css */
+.savings > header h2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.savings > header h2 svg {
+    color: var(--fix);
+}
+
+.savings > header .muted {
+    cursor: help;
+}
+
+.savings-tiles {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
+    gap: 8px;
+}
+
+.savings-tiles li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--fix-soft);
+}
+
+.savings-tiles b {
+    font-size: 22px;
+    line-height: 1.1;
+    color: var(--fix);
+    font-variant-numeric: tabular-nums;
+}
+
+.savings-tiles span {
+    font-size: 13px;
+    color: var(--ink-soft);
+}
+
+.savings-line {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.savings.compact .savings-line {
+    margin-top: 4px;
+}

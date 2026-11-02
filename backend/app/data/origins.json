@@ -1,0 +1,22 @@
+[
+  {"id": "MOW", "name": "Москва", "from": "из Москвы", "lat": 55.75, "lon": 37.62, "tz": 3, "big": true, "train": true, "airport_km": 35, "aliases": ["москв", "мск"]},
+  {"id": "LED", "name": "Санкт-Петербург", "from": "из Петербурга", "lat": 59.94, "lon": 30.31, "tz": 3, "big": true, "train": true, "airport_km": 17, "aliases": ["петербург", "питер", "спб", "санкт-петербург"]},
+  {"id": "SVX", "name": "Екатеринбург", "from": "из Екатеринбурга", "lat": 56.84, "lon": 60.61, "tz": 5, "big": true, "train": true, "airport_km": 20, "aliases": ["екатеринбург", "екб", "ебург", "е-бург", "екат"]},
+  {"id": "OVB", "name": "Новосибирск", "from": "из Новосибирска", "lat": 55.03, "lon": 82.92, "tz": 7, "big": true, "train": true, "airport_km": 20, "aliases": ["новосибирск", "нск"]},
+  {"id": "KZN", "name": "Казань", "from": "из Казани", "lat": 55.79, "lon": 49.12, "tz": 3, "big": true, "train": true, "airport_km": 25, "aliases": ["казан"]},
+  {"id": "GOJ", "name": "Нижний Новгород", "from": "из Нижнего Новгорода", "lat": 56.33, "lon": 44.0, "tz": 3, "big": false, "train": true, "airport_km": 18, "aliases": ["нижн", "нижнего новгорода"]},
+  {"id": "KUF", "name": "Самара", "from": "из Самары", "lat": 53.2, "lon": 50.15, "tz": 4, "big": false, "train": true, "airport_km": 40, "aliases": ["самар"]},
+  {"id": "UFA", "name": "Уфа", "from": "из Уфы", "lat": 54.74, "lon": 55.97, "tz": 5, "big": false, "train": true, "airport_km": 25, "aliases": ["уф"]},
+  {"id": "PEE", "name": "Пермь", "from": "из Перми", "lat": 58.01, "lon": 56.23, "tz": 5, "big": false, "train": true, "airport_km": 20, "aliases": ["перм"]},
+  {"id": "CEK", "name": "Челябинск", "from": "из Челябинска", "lat": 55.16, "lon": 61.4, "tz": 5, "big": false, "train": true, "airport_km": 18, "aliases": ["челябинск"]},
+  {"id": "TJM", "name": "Тюмень", "from": "из Тюмени", "lat": 57.15, "lon": 65.53, "tz": 5, "big": false, "train": true, "airport_km": 15, "aliases": ["тюмен"]},
+  {"id": "OMS", "name": "Омск", "from": "из Омска", "lat": 54.99, "lon": 73.37, "tz": 6, "big": false, "train": true, "airport_km": 8, "aliases": ["омск"]},
+  {"id": "KJA", "name": "Красноярск", "from": "из Красноярска", "lat": 56.01, "lon": 92.87, "tz": 7, "big": false, "train": true, "airport_km": 40, "aliases": ["красноярск"]},
+  {"id": "IKT", "name": "Иркутск", "from": "из Иркутска", "lat": 52.29, "lon": 104.28, "tz": 8, "big": false, "train": true, "airport_km": 8, "aliases": ["иркутск"]},
+  {"id": "KHV", "name": "Хабаровск", "from": "из Хабаровска", "lat": 48.48, "lon": 135.08, "tz": 10, "big": false, "train": true, "airport_km": 10, "aliases": ["хабаровск"]},
+  {"id": "VVO", "name": "Владивосток", "from": "из Владивостока", "lat": 43.12, "lon": 131.89, "tz": 10, "big": false, "train": true, "airport_km": 45, "aliases": ["владивосток"]},
+  {"id": "VOG", "name": "Волгоград", "from": "из Волгограда", "lat": 48.71, "lon": 44.51, "tz": 3, "big": false, "train": true, "airport_km": 15, "aliases": ["волгоград"]},
+  {"id": "GSV", "name": "Саратов", "from": "из Саратова", "lat": 51.53, "lon": 46.03, "tz": 4, "big": false, "train": true, "airport_km": 25, "aliases": ["саратов"]},
+  {"id": "KGD", "name": "Калининград", "from": "из Калининграда", "lat": 54.71, "lon": 20.51, "tz": 2, "big": false, "train": false, "airport_km": 22, "aliases": ["калининград"]},
+  {"id": "AER", "name": "Сочи", "from": "из Сочи", "lat": 43.585, "lon": 39.72, "tz": 3, "big": false, "train": true, "airport_km": 28, "aliases": ["сочи"]}
+]

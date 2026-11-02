@@ -1,0 +1,10 @@
+line-length = 140
+target-version = "py312"
+src = ["backend", "scripts"]
+
+[lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501", "E731", "SIM102", "SIM108", "UP038"]
+
+[format]
+quote-style = "double"

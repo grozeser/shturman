@@ -1,0 +1,10 @@
+/* Блок «План Б» на странице поездки */
+.plan-b {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--line-strong);
+}
+
+.plan-b p {
+    margin: 0 0 8px;
+}

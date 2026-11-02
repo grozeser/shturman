@@ -1,0 +1,12 @@
+{
+  "name": "shturman-e2e",
+  "private": true,
+  "description": "Сквозные тесты Штурмана в настоящем браузере. Нужен запущенный сервис (по умолчанию http://localhost:8080).",
+  "scripts": {
+    "test": "playwright test",
+    "install-browser": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.59.1"
+  }
+}

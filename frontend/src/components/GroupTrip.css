@@ -1,0 +1,123 @@
+/* Поездка компанией — отдельный файл, чтобы параллельные PR не конфликтовали в styles.css */
+.share-link {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.share-link input {
+    flex: 1 1 220px;
+    min-width: 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line-strong);
+    background: var(--card);
+    color: var(--ink);
+    font: inherit;
+    font-size: 14px;
+}
+
+.group-trip button.link {
+    background: none;
+    border: 0;
+    padding: 0;
+    min-height: 0;
+    color: var(--brand-ink);
+    text-decoration: underline;
+    font: inherit;
+    cursor: pointer;
+}
+
+.vote-bars {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vote-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.vote-row span {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.vote-track {
+    height: 8px;
+    margin: 6px 0 4px;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    overflow: hidden;
+}
+
+.vote-track i {
+    display: block;
+    height: 100%;
+    background: var(--lime); /* синий на тёмно-синей дорожке в тёмной теме почти не виден */
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+.vote-bars li.leader b::after {
+    content: ' — лидирует';
+    color: var(--ok);
+    font-weight: 600;
+}
+
+.share-page .options {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.share-page .option {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.share-page .option.picked {
+    outline: 2px solid var(--cta);
+}
+
+.share-page .option ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.share-page .per-person {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.share-page .who {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.share-page .who input {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line-strong);
+    background: var(--card);
+    color: var(--ink);
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .vote-track i {
+        transition: none;
+    }
+}

@@ -1,0 +1,54 @@
+/* Лайфхаки — отдельный файл, чтобы параллельные PR не конфликтовали в styles.css */
+.hacks ul {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hacks li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.hacks li > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    flex: 1;
+}
+
+.hacks li span:not(.hacks-icon) {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.hacks li > button {
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.hacks-icon {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--lime-soft);
+    color: var(--ok);
+}
+
+@media (max-width: 640px) {
+    .hacks li {
+        flex-wrap: wrap;
+    }
+
+    .hacks li > button {
+        margin-left: 44px;
+    }
+}

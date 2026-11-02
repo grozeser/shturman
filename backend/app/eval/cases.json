@@ -1,0 +1,532 @@
+[
+ {
+  "id": "tz-example",
+  "text": "хочу куда-нибудь к тёплому морю в ноябре, недорого, с ребёнком, без долгих перелётов",
+  "expect": {
+   "month": 11,
+   "children": 1,
+   "budget_level": "low",
+   "max_hours": 5,
+   "kinds": [
+    "sea"
+   ]
+  },
+  "must": [
+   "no_night_with_kids",
+   "max_hours"
+  ]
+ },
+ {
+  "id": "vague-sea",
+  "text": "хочу на море",
+  "answer": "в декабре вдвоём",
+  "expect": {
+   "kinds": [
+    "sea"
+   ]
+  }
+ },
+ {
+  "id": "concrete-sochi",
+  "text": "Сочи с 10 по 17 ноября вдвоём, бюджет 80 тысяч",
+  "expect": {
+   "destination": "sochi",
+   "date_from": "2026-11-10",
+   "nights": 7,
+   "adults": 2,
+   "budget": 80000
+  },
+  "must": [
+   "within_budget"
+  ]
+ },
+ {
+  "id": "kazan-turkey-dog",
+  "text": "из Казани в Турцию на майские с женой и собакой, всё включено",
+  "expect": {
+   "origin": "KZN",
+   "destination": "antalya",
+   "pets": "dog",
+   "meal": "AI",
+   "month": 5
+  },
+  "must": [
+   "pets_ok"
+  ]
+ },
+ {
+  "id": "ski-ny",
+  "text": "на новый год в горы покататься на лыжах компанией из 4 человек",
+  "expect": {
+   "adults": 4,
+   "month": 12,
+   "kinds": [
+    "ski"
+   ]
+  }
+ },
+ {
+  "id": "romantic-train",
+  "text": "романтические выходные в городе с хорошей едой, на поезде",
+  "expect": {
+   "transport": "train",
+   "nights": 2
+  },
+  "must": [
+   "train_only"
+  ]
+ },
+ {
+  "id": "family-two-kids",
+  "text": "летом на море с двумя детьми 3 и 7 лет, нужен детский клуб и бассейн",
+  "expect": {
+   "month": 7,
+   "children": 2,
+   "kinds": [
+    "sea"
+   ]
+  },
+  "must": [
+   "no_night_with_kids"
+  ]
+ },
+ {
+  "id": "budget-pp",
+  "text": "в Стамбул на неделю в марте, бюджет 60 тысяч на человека, нас двое",
+  "expect": {
+   "destination": "istanbul",
+   "month": 3,
+   "nights": 7,
+   "budget": 120000
+  }
+ },
+ {
+  "id": "visa-free",
+  "text": "куда можно без визы в феврале погреться, одна, не больше 6 часов лететь",
+  "expect": {
+   "adults": 1,
+   "month": 2,
+   "visa_free": true,
+   "max_hours": 6
+  },
+  "must": [
+   "max_hours"
+  ]
+ },
+ {
+  "id": "grandma",
+  "text": "с бабушкой в санаторий на минеральные воды в сентябре на 10 дней",
+  "expect": {
+   "month": 9,
+   "nights": 9
+  },
+  "must": [
+   "no_night_with_kids"
+  ]
+ },
+ {
+  "id": "dubai-lux",
+  "text": "Дубай на неделю в январе, люкс, деньги не важны",
+  "expect": {
+   "destination": "dubai",
+   "month": 1,
+   "budget_level": "high"
+  }
+ },
+ {
+  "id": "aurora",
+  "text": "хочу увидеть северное сияние в феврале",
+  "expect": {
+   "destination": "murmansk",
+   "month": 2
+  }
+ },
+ {
+  "id": "no-egypt",
+  "text": "тёплое море в январе, только не Египет, вдвоём",
+  "expect": {
+   "month": 1,
+   "exclude": [
+    "hurghada"
+   ]
+  }
+ },
+ {
+  "id": "spb-weekend",
+  "text": "Питер на выходные из Москвы вдвоём",
+  "expect": {
+   "destination": "spb",
+   "nights": 2
+  }
+ },
+ {
+  "id": "baikal-active",
+  "text": "активный отдых на Байкале в августе из Новосибирска, 2 взрослых",
+  "expect": {
+   "destination": "baikal",
+   "origin": "OVB",
+   "month": 8
+  }
+ },
+ {
+  "id": "phuket-dates",
+  "text": "Пхукет с 5 по 19 января, семьёй, ребёнку 4 года",
+  "expect": {
+   "destination": "phuket",
+   "date_from": "2027-01-05",
+   "nights": 14,
+   "children": 1
+  },
+  "must": [
+   "no_night_with_kids"
+  ]
+ },
+ {
+  "id": "anapa-kids",
+  "text": "в Анапу с малышом в июле, недорого",
+  "expect": {
+   "destination": "anapa",
+   "month": 7,
+   "children": 1
+  },
+  "must": [
+   "train_only"
+  ]
+ },
+ {
+  "id": "vietnam",
+  "text": "Вьетнам в декабре на две недели, вдвоём, с завтраками",
+  "expect": {
+   "destination": "nha_trang",
+   "month": 12,
+   "nights": 14,
+   "meal": "BB"
+  }
+ },
+ {
+  "id": "norway-unknown",
+  "text": "хочу в Норвегию на фьорды в июне",
+  "answer": "вдвоём",
+  "expect": {
+   "month": 6
+  }
+ },
+ {
+  "id": "cheap-city",
+  "text": "недорогой city break в мае из Екатеринбурга, люблю музеи и вкусную еду",
+  "expect": {
+   "origin": "SVX",
+   "month": 5,
+   "budget_level": "low"
+  }
+ },
+ {
+  "id": "maldives-honeymoon",
+  "text": "медовый месяц на Мальдивах в марте, 10 ночей",
+  "expect": {
+   "destination": "maldives",
+   "month": 3,
+   "nights": 10
+  }
+ },
+ {
+  "id": "abkhazia-train",
+  "text": "Абхазия в августе на поезде с ребёнком 8 лет",
+  "expect": {
+   "destination": "abkhazia",
+   "transport": "train",
+   "month": 8
+  },
+  "must": [
+   "train_only"
+  ]
+ },
+ {
+  "id": "kaliningrad-dog",
+  "text": "Калининград в октябре с собакой",
+  "answer": "вдвоём",
+  "expect": {
+   "destination": "kaliningrad",
+   "pets": "dog"
+  },
+  "must": [
+   "pets_ok"
+  ]
+ },
+ {
+  "id": "direct-only",
+  "text": "в Анталью в сентябре только прямым рейсом без ночных перелётов",
+  "expect": {
+   "destination": "antalya",
+   "direct_only": true,
+   "avoid_night": true
+  },
+  "must": [
+   "no_night"
+  ]
+ },
+ {
+  "id": "refundable",
+  "text": "Казань в декабре на 3 ночи, планы могут поменяться, нужна бесплатная отмена",
+  "expect": {
+   "destination": "kazan",
+   "nights": 3,
+   "refundable": true
+  },
+  "must": [
+   "refundable"
+  ]
+ },
+ {
+  "id": "slang-family",
+  "text": "мы с мужем и двумя пацанами 4 и 9 лет мечтаем погреться в декабре, денег тысяч на 250 всего, ночью лететь не хотим",
+  "expect": {
+   "month": 12,
+   "children": 2,
+   "adults": 2,
+   "budget": 250000,
+   "avoid_night": true,
+   "warm": true
+  },
+  "must": [
+   "no_night_with_kids"
+  ]
+ },
+ {
+  "id": "slang-weekend-spb",
+  "text": "посоветуй куда смотаться на пару дней из питера чтоб вкусно поесть и не тратить кучу бабок",
+  "answer": "в ноябре вдвоём",
+  "expect": {
+   "origin": "LED",
+   "nights": 2,
+   "budget_level": "low",
+   "kinds": [
+    "food"
+   ]
+  }
+ },
+ {
+  "id": "negation-ski",
+  "text": "отпуск в феврале, хочу горы и снег но я не катаюсь, просто природа и баня",
+  "expect": {
+   "month": 2,
+   "kinds": [
+    "mountains",
+    "nature"
+   ],
+   "exclude": []
+  }
+ },
+ {
+  "id": "honeymoon-novisa",
+  "text": "медовый месяц, где-нибудь где океан и пальмы, март, визу делать неохота",
+  "expect": {
+   "month": 3,
+   "adults": 2,
+   "visa_free": true,
+   "kinds": [
+    "sea"
+   ]
+  }
+ },
+ {
+  "id": "europe-novisa",
+  "text": "в отпуск на 2 недели в августе, куда-нибудь в Европу без визы",
+  "expect": {
+   "regions": [
+    "europe"
+   ],
+   "visa_free": true,
+   "nights": 14,
+   "month": 8
+  }
+ },
+ {
+  "id": "black-sea-train",
+  "text": "семья 2+1, сыну 7, хотим на Черное море в августе, без самолетов",
+  "expect": {
+   "regions": [
+    "black_sea"
+   ],
+   "transport": "train",
+   "children": 1,
+   "adults": 2
+  },
+  "must": [
+   "train_only",
+   "no_night_with_kids"
+  ]
+ },
+ {
+  "id": "hurghada-2plus2",
+  "text": "Хургада, 7 ночей с 20 декабря, 2+2 (дети 5 и 10)",
+  "expect": {
+   "destination": "hurghada",
+   "children": 2,
+   "adults": 2,
+   "date_from": "2026-12-20"
+  },
+  "must": [
+   "no_night_with_kids"
+  ]
+ },
+ {
+  "id": "kmv-seniors",
+  "text": "поездка с пожилыми родителями на воды в октябре следующего года",
+  "expect": {
+   "destination": "kmv",
+   "adults": 3,
+   "seniors": true
+  },
+  "must": [
+   "no_night_with_kids"
+  ]
+ },
+ {
+  "id": "newyear-toddler",
+  "text": "погреться на новогодние, нас 2 взрослых и малыш 1.5 года",
+  "expect": {
+   "month": 12,
+   "adults": 2,
+   "children": 1,
+   "warm": true
+  },
+  "must": [
+   "no_night_with_kids",
+   "max_hours"
+  ]
+ },
+ {
+  "id": "route-two-places",
+  "text": "3 ночи в Стамбуле и 4 в Каппадокии в мае вдвоём",
+  "expect": {
+   "route": [
+    "istanbul",
+    "cappadocia"
+   ],
+   "nights": 7,
+   "adults": 2
+  }
+ },
+ {
+  "id": "rt-typo-sochi",
+  "text": "хочу в сочм в декабре вдвоем",
+  "expect": {
+   "destination": "sochi",
+   "month": 12,
+   "adults": 2
+  }
+ },
+ {
+  "id": "rt-english",
+  "text": "turkey в июле, 2 взрослых",
+  "expect": {
+   "destination": "antalya",
+   "month": 7,
+   "adults": 2
+  }
+ },
+ {
+  "id": "rt-tai",
+  "text": "хочу в тай в декабре с женой",
+  "expect": {
+   "destination": "phuket",
+   "month": 12,
+   "adults": 2
+  }
+ },
+ {
+  "id": "rt-ng",
+  "text": "дубай нг 2 взрослых 1 ребенок 4 года",
+  "expect": {
+   "destination": "dubai",
+   "date_from": "2026-12-30",
+   "children": 1
+  },
+  "must": [
+   "no_night_with_kids"
+  ]
+ },
+ {
+  "id": "rt-start-of-month",
+  "text": "в начале марта в египет на неделю",
+  "expect": {
+   "date_from": "2027-03-02",
+   "nights": 7
+  }
+ },
+ {
+  "id": "rt-dollars",
+  "text": "$1500 на двоих в египет в феврале",
+  "expect": {
+   "budget": 120000,
+   "month": 2,
+   "adults": 2
+  }
+ },
+ {
+  "id": "rt-per-person",
+  "text": "до 50 на человека, море, ноябрь, вдвоём",
+  "expect": {
+   "budget": 100000,
+   "month": 11,
+   "kinds": [
+    "sea"
+   ]
+  }
+ },
+ {
+  "id": "rt-quiet",
+  "text": "хочу отдохнуть от работы, чтобы никого вокруг",
+  "answer": "в мае один",
+  "expect": {
+   "hotel_prefs": [
+    "quiet"
+   ]
+  }
+ },
+ {
+  "id": "rt-long",
+  "text": "привет, мы семья из 4 человек, двое детей 6 и 10 лет, хотим в отпуск в июле на 10 ночей, лучше море, чтобы был детский клуб и бассейн, перелёт не больше 4 часов, бюджет около 300 тысяч, вылет из екатеринбурга, без ночных рейсов, питание всё включено, отель недалеко от пляжа",
+  "expect": {
+   "origin": "SVX",
+   "month": 7,
+   "nights": 10,
+   "children": 2,
+   "budget": 300000,
+   "max_hours": 4,
+   "meal": "AI",
+   "avoid_night": true
+  },
+  "must": [
+   "no_night_with_kids",
+   "max_hours"
+  ]
+ },
+ {
+  "id": "rt-weekend",
+  "text": "в питер на выходные",
+  "expect": {
+   "destination": "spb",
+   "nights": 2
+  }
+ },
+ {
+  "id": "rt-six",
+  "text": "нас 6 человек, едем в сочи в августе",
+  "expect": {
+   "destination": "sochi",
+   "adults": 6,
+   "month": 8
+  }
+ },
+ {
+  "id": "rt-grandma",
+  "text": "с бабушкой 75 лет в кисловодск в сентябре",
+  "expect": {
+   "destination": "kmv",
+   "seniors": true,
+   "avoid_night": true
+  }
+ }
+]

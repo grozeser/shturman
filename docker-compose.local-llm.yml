@@ -1,0 +1,43 @@
+# Локальная LLM без внешних API и передачи данных наружу: запросы путешественников не покидают ваш сервер.
+#
+#   docker compose -f docker-compose.yml -f docker-compose.local-llm.yml up --build
+#
+# Первый запуск скачивает модель (~2,5 ГБ) в том ollama, дальше старт — секунды.
+# Модель меняется переменной LOCAL_LLM_MODEL в .env (например, qwen2.5:7b — точнее, но медленнее на CPU).
+services:
+  ollama:
+    image: ollama/ollama:0.35.1
+    volumes:
+      - ollama:/root/.ollama
+    environment:
+      OLLAMA_KEEP_ALIVE: "24h"  # модель остаётся в памяти — без холодного старта на каждый запрос
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+
+  ollama-pull:
+    image: ollama/ollama:0.35.1
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: ["ollama", "pull", "${LOCAL_LLM_MODEL:-qwen3:4b-instruct}"]
+    depends_on:
+      ollama:
+        condition: service_healthy
+    restart: "no"
+
+  app:
+    environment:
+      LLM_BASE_URL: http://ollama:11434/v1
+      LLM_API_KEY: ""
+      LLM_MODEL: ${LOCAL_LLM_MODEL:-qwen3:4b-instruct}
+      LLM_TIMEOUT_SECONDS: "120"
+      LLM_NARRATE: "false"  # на CPU второй вызов модели удвоил бы время ответа; цифры и так из расчётов
+    depends_on:
+      ollama-pull:
+        condition: service_completed_successfully
+
+volumes:
+  ollama:

@@ -1,0 +1,57 @@
+/* Сравнение направлений — отдельный файл, чтобы параллельные PR не конфликтовали в styles.css */
+.comparison-verdict {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 4px 0 16px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: var(--brand-softer);
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.comparison-verdict svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--brand);
+}
+
+.comparison-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.comparison-total {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.comparison-total b {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
+}
+
+.comparison-rows {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 6px 8px;
+    margin: 0;
+    font-size: 14px;
+}
+
+.comparison-rows dt {
+    color: var(--muted);
+    padding-top: 1px;
+}
+
+.comparison-rows dd {
+    margin: 0;
+    min-width: 0;
+}
+
+.comparison .dest > button {
+    margin-top: auto;
+}

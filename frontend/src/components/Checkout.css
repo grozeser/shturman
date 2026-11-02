@@ -1,0 +1,71 @@
+/* Полис и загранпаспорт в корзине — отдельный файл, чтобы параллельные PR не конфликтовали в styles.css */
+.checkout .policy {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 12px 0 0;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.checkout .policy.on {
+    border-color: var(--brand-line);
+    background: var(--brand-softer);
+}
+
+.checkout .policy input {
+    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--cta);
+}
+
+.checkout .policy span {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.checkout .policy small,
+.checkout .passport small {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.checkout .passport {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 12px 0 0;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: var(--surface-2);
+}
+
+.checkout .passport label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.checkout .passport.ok {
+    background: var(--ok-soft);
+}
+
+.checkout .passport.ok small {
+    color: var(--ok);
+}
+
+.checkout .passport.bad {
+    background: var(--err-soft);
+}
+
+.checkout .passport.bad small {
+    color: var(--err);
+    font-weight: 600;
+}
